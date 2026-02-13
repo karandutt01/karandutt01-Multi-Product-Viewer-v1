@@ -44,6 +44,21 @@ const registerUserRules = [
     .isLength({ min: 8, max: 128 }).withMessage('Password must be 8-128 characters')
 ];
 
+
+const loginUserRules = [
+  body('email')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage('Email is required')
+    .isEmail().withMessage('Email must be a valid email address')
+    .normalizeEmail(),
+
+  body('password')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage('Password is required')
+    .isString().withMessage('Password must be a string')
+    .isLength({ min: 8, max: 128 }).withMessage('Password must be 8-128 characters'),
+];
+
+
 module.exports ={
-  registerUserRules
+  registerUserRules,
+  loginUserRules
 }
