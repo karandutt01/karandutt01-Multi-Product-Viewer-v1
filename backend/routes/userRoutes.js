@@ -6,8 +6,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { registerUser } = require('../controllers/UserController');
-const registerUserRules = require('../validators/userValidator').registerUserRules;
+const { registerUser, loginUser } = require('../controllers/UserController');
+const {registerUserRules, loginUserRules} = require('../validators/userValidator');
 const { validate } = require('../middleware/validate');
 
 /**
@@ -36,5 +36,6 @@ const { validate } = require('../middleware/validate');
  */
 
 router.route('/register').post(registerUserRules, validate, registerUser)
+router.route('/login').post(loginUserRules, validate, loginUser)
 
 module.exports = router;
