@@ -3,6 +3,7 @@
  * @module ProductController
  */
 const { db, bucket } = require('../../config/firebaseAdmin');
+const { MESSAGES } = require('../../constants');
 
 
 /**
@@ -30,7 +31,7 @@ const addProduct = async(req, res) => {
     const {title, price, productDesc } = req.body
 
     if (!req.file) {
-      return res.status(400).json({ message: 'No file uploaded' });
+      return res.status(400).json({ message: MESSAGES.VALIDATION.NO_FILE_UPLOADED });
     }
 
     const fileName = `products/images/${req.file.originalname}`;
@@ -56,7 +57,7 @@ const addProduct = async(req, res) => {
     });
 
     if(addProduct){
-      return res.status(201).json({message:"Product Added Successfullly"})
+      return res.status(201).json({message: MESSAGES.SUCCESS.PRODUCT_ADDED})
     }
 
   } catch (error) {

@@ -13,58 +13,60 @@
  * @returns {void} Calls next() if validation passes, otherwise sends 400 error
  */
 
+const { MESSAGES } = require('../../constants/messages')
+
 const validateAddProduct = (req, res, next) => {
   const { title, price, productDesc } = req.body;
   const errors = [];
 
   // Validate required fields
   if (!title || typeof title !== 'string' || title.trim().length === 0) {
-    errors.push('Title is required');
+    errors.push(MESSAGES.VALIDATION.TITLE_REQUIRED);
   }
 
   if (!price) {
-    errors.push('Price is required');
+    errors.push(MESSAGES.VALIDATION.PRICE_REQUIRED);
   } else {
     const numericPrice = Number(price);
     if (isNaN(numericPrice) || numericPrice <= 0) {
-      errors.push('Price must be a positive number');
+      errors.push(MESSAGES.VALIDATION.PRICE_POSITIVE);
     }
   }
 
   if (!productDesc || typeof productDesc !== 'string' || productDesc.trim().length === 0) {
-    errors.push('Product description is required');
+    errors.push(MESSAGES.VALIDATION.PRODUCT_DESC_REQUIRED);
   }
 
   // Validate file upload
   if (!req.file) {
-    errors.push('Product image is required');
+    errors.push(MESSAGES.VALIDATION.PRODUCT_IMAGE_REQUIRED);
   } else {
     // Validate file type
     const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedMimeTypes.includes(req.file.mimetype)) {
-      errors.push('Invalid file type. Only JPEG, PNG, GIF, and WebP images are allowed');
+      errors.push(MESSAGES.VALIDATION.INVALID_FILE_TYPE);
     }
 
     // Validate file size (5MB limit)
     const maxSize = 5 * 1024 * 1024; // 5MB in bytes
     if (req.file.size > maxSize) {
-      errors.push('File size must be less than 5MB');
+      errors.push(MESSAGES.VALIDATION.FILE_SIZE_LIMIT);
     }
   }
 
   // Validate title length
   if (title && title.length > 100) {
-    errors.push('Title must be less than 100 characters');
+    errors.push(MESSAGES.VALIDATION.TITLE_MAX_LENGTH);
   }
 
   // Validate description length
   if (productDesc && productDesc.length > 1000) {
-    errors.push('Product description must be less than 1000 characters');
+    errors.push(MESSAGES.VALIDATION.PRODUCT_DESC_MAX_LENGTH);
   }
 
   if (errors.length > 0) {
     return res.status(400).json({
-      message: 'Validation failed',
+      message: MESSAGES.VALIDATION.VALIDATION_FAILED,
       errors: errors
     });
   }
