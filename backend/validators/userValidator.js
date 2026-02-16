@@ -1,4 +1,24 @@
+/**
+ * @module validators/userValidator
+ * Express-validator chains for user-related request payloads.
+ */
+
 const { body } = require('express-validator');
+
+/**
+ * Validation rules for POST "/register" payload.
+ *
+ * Fields:
+ * - firstname: required, 1–50 chars, trimmed.
+ * - lastname: required, 1–50 chars, trimmed.
+ * - email: required, valid email format, normalized.
+ * - password: required string, 8–128 chars.
+ *
+ * Example (Express):
+ *   router.post('/register', registerUserRules, validate, controller.registerUser)
+ *
+ * @type {import('express-validator').ValidationChain[]}
+ */
 
 const registerUserRules = [
 
