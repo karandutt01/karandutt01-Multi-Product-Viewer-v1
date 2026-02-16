@@ -7,7 +7,7 @@ jest.mock('../config/firebaseAdmin', () => ({
 const firebaseAdmin = require('../config/firebaseAdmin');
 const { registerUser } = require('./UserController');
 
-function createMockRes() {
+function createMockResponse() {
   const res = {};
   res.statusCode = 200;
   res.status = jest.fn().mockImplementation(function (code) {
@@ -41,7 +41,7 @@ describe('UserController.registerUser', () => {
         password: '123456'
       }
     };
-    const res = createMockRes();
+    const res = createMockResponse();
 
     await registerUser(req, res);
 
@@ -71,7 +71,7 @@ describe('UserController.registerUser', () => {
         password: '123456'
       }
     };
-    const res = createMockRes();
+    const res = createMockResponse();
 
     await registerUser(req, res);
 
@@ -91,7 +91,7 @@ describe('UserController.registerUser', () => {
         password: '123456'
       }
     };
-    const res = createMockRes();
+    const res = createMockResponse();
 
     await registerUser(req, res);
 
