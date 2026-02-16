@@ -8,6 +8,7 @@ module.exports = {
   SUCCESS: {
     USER_REGISTERED: 'User registered successfully',
     LOGIN_SUCCESSFUL: 'Login successful',
+    PRODUCT_ADDED: 'Product added successfully'
   },
   
   // Error Messages
@@ -37,6 +38,26 @@ module.exports = {
     
     // Format Validations
     EMAIL_INVALID: 'Email must be a valid email address',
-    PASSWORD_STRING: 'Password must be a string'
+    PASSWORD_STRING: 'Password must be a string',
+
+    // Product Validation Messages
+    TITLE_REQUIRED: 'Title is required',
+    PRICE_REQUIRED: 'Price is required',
+    PRICE_POSITIVE: 'Price must be a positive number',
+    PRODUCT_DESC_REQUIRED: 'Product description is required',
+    PRODUCT_IMAGE_REQUIRED: 'Product image is required',
+    NO_FILE_UPLOADED: 'No file uploaded',
+    
+    // Product Length Validations
+    TITLE_MAX_LENGTH: 'Title must be less than 100 characters',
+    PRODUCT_DESC_MAX_LENGTH: 'Product description must be less than 1000 characters',
+    
+    // File Upload Validations
+    INVALID_FILE_TYPE: 'Invalid file type. Only JPEG, PNG, GIF, and WebP images are allowed',
+    FILE_SIZE_LIMIT: 'File size must be less than 5MB',
+    
+    // General Validation
+    VALIDATION_FAILED: 'Validation failed'
+
   }
 };

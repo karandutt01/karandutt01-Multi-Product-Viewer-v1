@@ -78,6 +78,7 @@ const loginUser = async(req, res) => {
             }),
         });
 
+        console.log('Response', response)
         const data = await response.json();
         
         if(response.status === HTTP_STATUS.OK){
