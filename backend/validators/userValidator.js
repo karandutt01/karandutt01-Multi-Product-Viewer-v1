@@ -45,6 +45,16 @@ const registerUserRules = [
 ];
 
 
+/**
+ * Validation rules for POST "/login" payload.
+ *
+ * Fields:
+ * - email: required, valid email format, normalized.
+ * - password: required string, 8–128 chars.
+ *
+ * @type {import('express-validator').ValidationChain[]}
+ */
+
 const loginUserRules = [
   body('email')
     .exists({ checkNull: true, checkFalsy: true }).withMessage('Email is required')
