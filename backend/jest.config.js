@@ -3,14 +3,31 @@ module.exports = {
   testEnvironment: 'node',
   // Root is backend/; will discover **/*.test.js by default
   clearMocks: true,
+  coverageProvider: 'v8',
+  collectCoverage: true,
   moduleFileExtensions: ['js', 'json'],
   testMatch: ['**/?(*.)+(test).js'],
+  collectCoverage: true,
   collectCoverageFrom: [
-    'controllers/**/*.js',
-    'controllers/**/**/*.js',
-    '!**/__tests__/**',
-    '!**/*.test.js'
+    '**/*.js',
+    '!**/*.test.js',
+    '!**/node_modules/**',
+    '!**/coverage/**',
+    '!config/**',
+    '!config.js',
+    '!jest.config.js',
+    '!server.js',
+
+  ],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/backend/config/',
+    '<rootDir>/backend/config\\.js$',
+    '<rootDir>/jest\\.config\\.js$',
+    '<rootDir>/server\\.js$',
+    '/node_modules/',
+    '/coverage/',
   ],
   coverageDirectory: 'coverage',
-  testTimeout: 10000
+  coverageReporters: ['text', 'html', 'lcov', 'json-summary'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 };
