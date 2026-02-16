@@ -17,7 +17,7 @@ module.exports = {
     '!config.js',
     '!jest.config.js',
     '!server.js',
-
+    '!**/routes/**',
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/backend/config/',

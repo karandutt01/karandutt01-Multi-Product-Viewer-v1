@@ -5,7 +5,7 @@ jest.mock('../config/firebaseAdmin', () => ({
 }));
 
 const firebaseAdmin = require('../config/firebaseAdmin');
-const { registerUser } = require('./UserController');
+const { registerUser, loginUser } = require('./UserController');
 
 function createMockResponse() {
   const res = {};
@@ -100,3 +100,114 @@ describe('UserController.registerUser', () => {
   });
 });
 
+describe('UserController.loginUser', () => {
+  let originalFetch;
+
+  beforeAll(() => {
+    originalFetch = global.fetch;
+  });
+
+  afterAll(() => {
+    global.fetch = originalFetch;
+  });
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('should login successfully and return token', async () => {
+    const mockJson = jest.fn().mockResolvedValue({
+      idToken: 'token-abc',
+      localId: 'uid-xyz'
+    });
+    const mockFetch = jest.fn().mockResolvedValue({
+      status: 200,
+      json: mockJson
+    });
+    global.fetch = mockFetch;
+
+    const req = {
+      body: {
+        email: 'test@example.com',
+        password: 'password123'
+      }
+    };
+    const res = createMockResponse();
+
+    await loginUser(req, res);
+
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(res.json).toHaveBeenCalledWith({
+      message: 'Login successful',
+      token: 'token-abc',
+      uid: 'uid-xyz',
+      expiresIn: 60 * 20
+    });
+    expect(res.status).not.toHaveBeenCalledWith(401);
+  });
+
+  test('should fail login with invalid credentials', async () => {
+    const mockJson = jest.fn().mockResolvedValue({
+      error: { message: 'Invalid email or password' }
+    });
+    const mockFetch = jest.fn().mockResolvedValue({
+      status: 400,
+      json: mockJson
+    });
+    global.fetch = mockFetch;
+
+    const req = {
+      body: {
+        email: 'asd@example.com',
+        password: '00000'
+      }
+    };
+    const res = createMockResponse();
+
+    await loginUser(req, res);
+
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid email or password' });
+  });
+
+  test('should handle fetch/network errors', async () => {
+    const mockFetch = jest.fn().mockRejectedValue(new Error('Network error'));
+    global.fetch = mockFetch;
+
+    const req = {
+      body: {
+        email: 'test@example.com',
+        password: 'password123'
+      }
+    };
+    const res = createMockResponse();
+
+    await loginUser(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Network error' });
+  });
+
+  test('should handle missing error message in response', async () => {
+    const mockJson = jest.fn().mockResolvedValue({});
+    const mockFetch = jest.fn().mockResolvedValue({
+      status: 400,
+      json: mockJson
+    });
+    global.fetch = mockFetch;
+
+    const req = {
+      body: {
+        email: 'test@example.com',
+        password: 'password123'
+      }
+    };
+    const res = createMockResponse();
+
+    await loginUser(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Login failed' });
+  });
+});

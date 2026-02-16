@@ -4,6 +4,8 @@
  */
 
 const firebaseAdmin = require('../config/firebaseAdmin');
+const firebaseConfig = require('../config/firebaseConfig');
+
 
 /**
  * Shape of the expected request body for user registration.
@@ -50,12 +52,23 @@ const registerUser = async(req,res) => {
     }
 }
 
+/**
+ * Authenticates a user using Firebase Authentication REST API and returns a login payload.
+ *
+ * Behavior:
+ * - On success, responds with HTTP 200 and JSON: { message, token, uid, expiresIn }.
+ * - On failure, responds with HTTP 401 and JSON: { error } containing a safe error message.
+ *
+ * @param {import('express').Request & { body: { email: string, password: string } }} req - Express request; must contain email and password.
+ * @param {import('express').Response} res - Express response.
+ * @returns {Promise<import('express').Response>} The response sent to the client.
+ */
 
 const loginUser = async(req, res) => {
     try {
-
+        
         const { email, password } = req.body;
-         const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyASSGSw-qf99uUdoMTtjqTxmYfQnKtJYfk`, {
+         const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseConfig.apiKey}`, {
             method: "POST",
             body: JSON.stringify({ 
                 email,
@@ -78,7 +91,7 @@ const loginUser = async(req, res) => {
         }    
 
     } catch (error) {
-        res.status(401).json({error: error.message || "Invalid email or password"});
+        return res.status(401).json({error: error.message || "Invalid email or password"});
     }
    
 }
