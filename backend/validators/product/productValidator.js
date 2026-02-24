@@ -21,7 +21,7 @@ const validateAddProduct = (req, res, next) => {
 
   // Validate required fields
   if (!title || typeof title !== 'string' || title.trim().length === 0) {
-    errors.push(MESSAGES.VALIDATION.TITLE_);
+    errors.push(MESSAGES.VALIDATION.TITLE_REQUIRED);
   }
 
   if (!price) {
