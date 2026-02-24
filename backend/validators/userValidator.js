@@ -4,7 +4,7 @@
  */
 
 const { body } = require('express-validator');
-const { MESSAGES } = require('../constants');
+const { MESSAGES } = require('../constants/index');
 
 /**
  * Validation rules for POST "/register" payload.
