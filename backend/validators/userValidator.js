@@ -4,6 +4,7 @@
  */
 
 const { body } = require('express-validator');
+const { MESSAGES } = require('../constants');
 
 /**
  * Validation rules for POST "/register" payload.
@@ -23,25 +24,25 @@ const { body } = require('express-validator');
 const registerUserRules = [
 
     body('firstname')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('First name is required')
-    .isLength({ min: 1, max: 50 }).withMessage('First name must be 1-50 characters')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.FIRST_NAME_REQUIRED)
+    .isLength({ min: 1, max: 50 }).withMessage(MESSAGES.VALIDATION.FIRST_NAME_LENGTH)
     .trim(),
 
     body('lastname')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('last name is required')
-    .isLength({ min: 1, max: 50 }).withMessage('Last name must be 1-50 characters')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.LAST_NAME_REQUIRED)
+    .isLength({ min: 1, max: 50 }).withMessage(MESSAGES.VALIDATION.LAST_NAME_LENGTH)
     .trim(),
 
     body('email')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('Email is required')
-    .isEmail().withMessage('Email must be a valid email address')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.EMAIL_REQUIRED)
+    .isEmail().withMessage(MESSAGES.VALIDATION.EMAIL_INVALID)
     .normalizeEmail(),
 
     body('password')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('Password is required')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.PASSWORD_REQUIRED)
     .bail()
-    .isString().withMessage('Password must be a string')
-    .isLength({ min: 8, max: 128 }).withMessage('Password must be 8-128 characters')
+    .isString().withMessage(MESSAGES.VALIDATION.PASSWORD_STRING)
+    .isLength({ min: 8, max: 128 }).withMessage(MESSAGES.VALIDATION.PASSWORD_LENGTH)
 ];
 
 
@@ -57,14 +58,14 @@ const registerUserRules = [
 
 const loginUserRules = [
   body('email')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('Email is required')
-    .isEmail().withMessage('Email must be a valid email address')
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.EMAIL_REQUIRED)
+    .isEmail().withMessage(MESSAGES.VALIDATION.EMAIL_INVALID)
     .normalizeEmail(),
 
   body('password')
-    .exists({ checkNull: true, checkFalsy: true }).withMessage('Password is required')
-    .isString().withMessage('Password must be a string')
-    .isLength({ min: 8, max: 128 }).withMessage('Password must be 8-128 characters'),
+    .exists({ checkNull: true, checkFalsy: true }).withMessage(MESSAGES.VALIDATION.PASSWORD_REQUIRED)
+    .isString().withMessage(MESSAGES.VALIDATION.PASSWORD_STRING)
+    .isLength({ min: 8, max: 128 }).withMessage(MESSAGES.VALIDATION.PASSWORD_LENGTH),
 ];
 
 

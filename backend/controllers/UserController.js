@@ -5,6 +5,7 @@
 
 const firebaseAdmin = require('../config/firebaseAdmin');
 const firebaseConfig = require('../config/firebaseConfig');
+const { HTTP_STATUS, MESSAGES, FIREBASE } = require('../../constants');
 
 
 /**
@@ -38,17 +39,17 @@ const registerUser = async(req,res) => {
         })
 
         if(user){
-            return res.status(201).json({ 
-                message: "User Registered Successfully",
+            return res.status(HTTP_STATUS.CREATED).json({ 
+                message: MESSAGES.SUCCESS.USER_REGISTERED,
                 uid: user.uid, 
                 email:user.email 
             })
         }else{
-            throw new Error("User data is not valid")
+            throw new Error(MESSAGES.ERROR.USER_DATA_INVALID)
         }
        
     } catch (error) {
-        return res.status(500).json({ error: error.message });
+        return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ error: error.message });
     }
 }
 
@@ -68,30 +69,30 @@ const loginUser = async(req, res) => {
     try {
         
         const { email, password } = req.body;
-         const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseConfig.apiKey}`, {
+         const response = await fetch(`${FIREBASE.API_ENDPOINTS.SIGN_IN_WITH_PASSWORD}?key=${firebaseConfig.apiKey}`, {
             method: "POST",
             body: JSON.stringify({ 
                 email,
                 password,
-                returnSecureToken: true
+                returnSecureToken: FIREBASE.RETURN_SECURE_TOKEN
             }),
         });
 
         const data = await response.json();
         
-        if(response.status === 200){
+        if(response.status === HTTP_STATUS.OK){
             return res.json({
-                message: "Login successful",
+                message: MESSAGES.SUCCESS.LOGIN_SUCCESSFUL,
                 token: data.idToken,
                 uid: data.localId,
-                expiresIn: 60 * 20
+                expiresIn: FIREBASE.TOKEN_EXPIRY_SECONDS
             });
         }else{
-            throw new Error(data.error?.message || "Login failed");
+            throw new Error(data.error?.message || MESSAGES.ERROR.LOGIN_FAILED);
         }    
 
     } catch (error) {
-        return res.status(401).json({error: error.message || "Invalid email or password"});
+        return res.status(HTTP_STATUS.UNAUTHORIZED).json({error: error.message || MESSAGES.ERROR.INVALID_CREDENTIALS});
     }
    
 }
