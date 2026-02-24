@@ -8,7 +8,8 @@ module.exports = {
   SUCCESS: {
     USER_REGISTERED: 'User registered successfully',
     LOGIN_SUCCESSFUL: 'Login successful',
-    PRODUCT_ADDED: 'Product added successfully'
+    PRODUCT_ADDED: 'Product added successfully',
+    NO_PRODUCTS_FOUND: 'No products found'
   },
   
   // Error Messages
@@ -18,9 +19,26 @@ module.exports = {
     LOGIN_FAILED: 'Login failed',
     TOKEN_EXPIRED: 'Authentication token has expired',
     TOKEN_INVALID: 'Invalid authentication token',
-    
+    LOGIN_FAILED: 'Login failed',
+
     // User Management
+    USER_ALREADY_EXISTS: 'User with this email already exists',
+    USER_REGISTRATION_FAILED: 'User registration failed',
     USER_DATA_INVALID: 'User data is not valid',
+
+    // Validation
+    REQUIRED_FIELD_MISSING: 'Required field is missing',
+    INVALID_EMAIL_FORMAT: 'Invalid email format',
+    PASSWORD_TOO_WEAK: 'Password must be at least 8 characters long',
+    INVALID_INPUT: 'Invalid input provided',
+    UPLOAD_ERROR: 'File upload failed',
+
+    //General
+    INTERNAL_ERROR: 'An internal server error occurred',
+    RESOURCE_NOT_FOUND: 'Requested resource not found',
+    INVALID_REQUEST: 'Invalid request format',
+    NETWORK_ERROR: 'Network error occurred',
+    SERVICE_UNAVAILABLE: 'Service temporarily unavailable'
   },
 
   // Validation Messages

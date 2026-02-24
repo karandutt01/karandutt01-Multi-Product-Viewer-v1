@@ -6,7 +6,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { addProduct } = require('../controllers/Products/ProductController')
+const { addProduct, productList } = require('../controllers/products/ProductController')
 const authMiddleware = require('../middleware/validateTokenHandler')
 const { validateAddProduct } = require('../validators/product/productValidator')
 const uploadFile = require('../middleware/uploadFile')
@@ -24,5 +24,6 @@ const uploadFile = require('../middleware/uploadFile')
  */
 
 router.route('/add-product').post([authMiddleware, uploadFile.single('image'), validateAddProduct],  addProduct)
+router.route('/product-list').get(authMiddleware, productList)
 
 module.exports = router

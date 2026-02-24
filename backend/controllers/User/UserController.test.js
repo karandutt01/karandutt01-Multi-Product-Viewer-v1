@@ -5,6 +5,7 @@ jest.mock('../../config/firebaseAdmin', () => ({
 }));
 
 const firebaseAdmin = require('../../config/firebaseAdmin');
+const { MESSAGES } = require('../../constants');
 const { registerUser, loginUser } = require('../User/UserController');
 
 function createMockResponse() {
@@ -53,14 +54,14 @@ describe('UserController.registerUser', () => {
     });
     expect(res.status).toHaveBeenCalledWith(201);
     expect(res.json).toHaveBeenCalledWith({
-      message: 'User Registered Successfully',
+      message: MESSAGES.SUCCESS.USER_REGISTERED,
       uid: 'uid-123',
       email: 'kumarkaran@gmail.com'
     });
   });
 
   test('should fail registration when firebase errors', async () => {
-    const mockCreateUser = jest.fn().mockRejectedValue(new Error('EMAIL EXISTS'));
+    const mockCreateUser = jest.fn().mockRejectedValue(new Error(MESSAGES.ERROR.USER_ALREADY_EXISTS));
     firebaseAdmin.admin.auth.mockReturnValue({ createUser: mockCreateUser });
 
     const req = {
@@ -76,7 +77,7 @@ describe('UserController.registerUser', () => {
     await registerUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(500);
-    expect(res.json).toHaveBeenCalledWith({ error: 'EMAIL EXISTS' });
+    expect(res.json).toHaveBeenCalledWith({ error: MESSAGES.ERROR.USER_ALREADY_EXISTS });
   });
 
   test('should fail registration when user is falsy', async () => {
@@ -96,7 +97,7 @@ describe('UserController.registerUser', () => {
     await registerUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(500);
-    expect(res.json).toHaveBeenCalledWith({ error: 'User data is not valid' });
+    expect(res.json).toHaveBeenCalledWith({ error: MESSAGES.ERROR.USER_DATA_INVALID });
   });
 });
 
@@ -138,7 +139,7 @@ describe('UserController.loginUser', () => {
 
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(res.json).toHaveBeenCalledWith({
-      message: 'Login successful',
+      message: MESSAGES.SUCCESS.LOGIN_SUCCESSFUL,
       token: 'token-abc',
       uid: 'uid-xyz',
       expiresIn: 60 * 20
@@ -148,7 +149,7 @@ describe('UserController.loginUser', () => {
 
   test('should fail login with invalid credentials', async () => {
     const mockJson = jest.fn().mockResolvedValue({
-      error: { message: 'Invalid email or password' }
+      error: { message: MESSAGES.ERROR.INVALID_CREDENTIALS }
     });
     const mockFetch = jest.fn().mockResolvedValue({
       status: 400,
@@ -168,11 +169,11 @@ describe('UserController.loginUser', () => {
 
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid email or password' });
+    expect(res.json).toHaveBeenCalledWith({ error: MESSAGES.ERROR.INVALID_CREDENTIALS });
   });
 
   test('should handle fetch/network errors', async () => {
-    const mockFetch = jest.fn().mockRejectedValue(new Error('Network error'));
+    const mockFetch = jest.fn().mockRejectedValue(new Error(MESSAGES.ERROR.NETWORK_ERROR));
     global.fetch = mockFetch;
 
     const req = {
@@ -186,7 +187,7 @@ describe('UserController.loginUser', () => {
     await loginUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ error: 'Network error' });
+    expect(res.json).toHaveBeenCalledWith({ error: MESSAGES.ERROR.NETWORK_ERROR });
   });
 
   test('should handle missing error message in response', async () => {
@@ -208,6 +209,6 @@ describe('UserController.loginUser', () => {
     await loginUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ error: 'Login failed' });
+    expect(res.json).toHaveBeenCalledWith({ error: MESSAGES.ERROR.LOGIN_FAILED });
   });
 });
