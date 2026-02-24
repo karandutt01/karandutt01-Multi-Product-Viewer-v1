@@ -3,8 +3,8 @@
  * Handlers for user-related operations.
  */
 
-const firebaseAdmin = require('../config/firebaseAdmin');
-const firebaseConfig = require('../config/firebaseConfig');
+const firebaseAdmin = require('../../config/firebaseAdmin');
+const firebaseConfig = require('../../config/firebaseConfig');
 const { HTTP_STATUS, MESSAGES, FIREBASE } = require('../../constants');
 
 
