@@ -13,7 +13,7 @@
  * @returns {void} Calls next() if validation passes, otherwise sends 400 error
  */
 
-const { MESSAGES } = require('../../constants/messages')
+const { MESSAGES } = require('../../constants')
 
 const validateAddProduct = (req, res, next) => {
   const { title, price, productDesc } = req.body;
@@ -21,7 +21,7 @@ const validateAddProduct = (req, res, next) => {
 
   // Validate required fields
   if (!title || typeof title !== 'string' || title.trim().length === 0) {
-    errors.push(MESSAGES.VALIDATION.TITLE_REQUIRED);
+    errors.push(MESSAGES.VALIDATION.TITLE_);
   }
 
   if (!price) {
