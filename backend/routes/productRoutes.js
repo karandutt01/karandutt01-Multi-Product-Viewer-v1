@@ -23,6 +23,6 @@ const uploadFile = require('../middleware/uploadFile')
  * @returns {201|400} JSON with success or error message.
  */
 
-router.route('/add-product').post([authMiddleware, validateAddProduct, uploadFile.single('image')],  addProduct)
+router.route('/add-product').post([authMiddleware, uploadFile.single('image'), validateAddProduct],  addProduct)
 
 module.exports = router
