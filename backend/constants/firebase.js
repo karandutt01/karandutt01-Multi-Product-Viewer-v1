@@ -7,10 +7,7 @@ module.exports = {
   // Firebase Auth API Endpoints
   API_ENDPOINTS: {
     SIGN_IN_WITH_PASSWORD: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword',
-    SIGN_UP: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp',
     REFRESH_TOKEN: 'https://securetoken.googleapis.com/v1/token',
-    DELETE_ACCOUNT: 'https://identitytoolkit.googleapis.com/v1/accounts:delete',
-    UPDATE_PROFILE: 'https://identitytoolkit.googleapis.com/v1/accounts:update'
   },
   
   // Token Configuration
