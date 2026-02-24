@@ -77,6 +77,31 @@ const addProduct = async(req, res) => {
 
 }
 
+const productList = async(req, res) => {
+  try {
+    const snapshot = await db.collection('products')
+                            .where('user_id', '==', req.user.user_id).get();
+    
+    const products = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    if (!products.length) {
+      return res.status(200).json({ 
+        doc: [],
+        message: MESSAGES.SUCCESS.NO_PRODUCTS_FOUND
+      })
+    } else {
+      return res.status(200).json({ doc: products })
+    }
+
+  } catch (error) {
+    return res.json({error: error.message})
+  }
+}
+
 module.exports = {
   addProduct,
+  productList
 }
