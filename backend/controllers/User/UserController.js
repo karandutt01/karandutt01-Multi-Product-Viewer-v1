@@ -3,6 +3,7 @@
  * Handlers for user-related operations.
  */
 
+const { refreshToken } = require('firebase-admin/app');
 const firebaseAdmin = require('../../config/firebaseAdmin');
 const firebaseConfig = require('../../config/firebaseConfig');
 const { HTTP_STATUS, MESSAGES, FIREBASE } = require('../../constants');
@@ -85,6 +86,7 @@ const loginUser = async(req, res) => {
                 message: MESSAGES.SUCCESS.LOGIN_SUCCESSFUL,
                 token: data.idToken,
                 uid: data.localId,
+                refreshToken: data.refreshToken,
                 expiresIn: FIREBASE.TOKEN_EXPIRY_SECONDS
             });
         }else{
