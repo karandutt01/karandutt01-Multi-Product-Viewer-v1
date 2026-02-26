@@ -1,5 +1,5 @@
 /**
- * @module controllers/UserController
+ * @module controllers/userController
  * Handlers for user-related operations.
  */
 

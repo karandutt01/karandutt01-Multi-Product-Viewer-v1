@@ -1,6 +1,6 @@
 /**
- * ProductController module for handling product-related operations.
- * @module ProductController
+ * productController module for handling product-related operations.
+ * @module productController
  */
 const { db, bucket } = require('../../config/firebaseAdmin');
 const { MESSAGES } = require('../../constants');

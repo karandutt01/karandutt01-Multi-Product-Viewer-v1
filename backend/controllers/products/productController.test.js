@@ -1,4 +1,4 @@
-const { addProduct } = require('./ProductController');
+const { addProduct } = require('./productController');
 const httpMocks = require('node-mocks-http');
 
 jest.mock('../../config/firebaseAdmin', () => {
