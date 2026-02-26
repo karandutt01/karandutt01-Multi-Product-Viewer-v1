@@ -5,7 +5,7 @@ jest.mock('../../config/firebaseAdmin', () => ({
 }));
 
 const firebaseAdmin = require('../../config/firebaseAdmin');
-const { registerUser, loginUser } = require('./userController');
+const { registerUser, loginUser } = require('./UserController');
 
 function createMockResponse() {
   const res = {};
