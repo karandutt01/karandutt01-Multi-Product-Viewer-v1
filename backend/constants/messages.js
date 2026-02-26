@@ -21,6 +21,9 @@ module.exports = {
     
     // User Management
     USER_DATA_INVALID: 'User data is not valid',
+
+    // Product
+      PRODUCT_CREATION_FAILED: 'Product creation failed',
   },
 
   // Validation Messages
@@ -47,6 +50,7 @@ module.exports = {
     PRODUCT_DESC_REQUIRED: 'Product description is required',
     PRODUCT_IMAGE_REQUIRED: 'Product image is required',
     NO_FILE_UPLOADED: 'No file uploaded',
+    
     
     // Product Length Validations
     TITLE_MAX_LENGTH: 'Title must be less than 100 characters',

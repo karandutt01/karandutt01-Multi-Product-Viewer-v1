@@ -1,4 +1,9 @@
 require('dotenv').config();
+const { initializeConfig } = require('./config/config');
+
+// Initialize and validate configuration
+const config = initializeConfig();
+const firebaseConfig = require('./constants/firebase');
 const express = require('express');
 const app = express();
 
@@ -16,5 +21,5 @@ app.use('/api', userRoutes)
 app.use('/api/products', products)
 
 app.listen(port, () => {
-    console.log('Server runnning on port ' + port)
+   console.log(`🌍 Starting application in ${config.environment} environment on port ${port}`);
 })

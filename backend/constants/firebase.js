@@ -1,7 +1,14 @@
 /**
  * @module constants/firebase
  * Firebase-specific constants and API endpoints
+ * Now uses environment variables for secure configuration
  */
+
+// Import configuration system
+const { getConfig } = require('../config/config');
+
+// Get validated configuration
+const config = getConfig();
 
 module.exports = {
   // Firebase Auth API Endpoints
@@ -10,19 +17,16 @@ module.exports = {
     REFRESH_TOKEN: 'https://securetoken.googleapis.com/v1/token',
   },
 
-  FIREBASE_CONFIG : {
-    apiKey: "AIzaSyASSGSw-qf99uUdoMTtjqTxmYfQnKtJYfk",
-    authDomain: "multi-product-viewer.firebaseapp.com",
-    projectId: "multi-product-viewer",
-    storageBucket: "multi-product-viewer.firebasestorage.app",
-    messagingSenderId: "725574217788",
-    appId: "1:725574217788:web:c6fd8e533c50bc6370d339"
-  },
+  // Environment-based Firebase Configuration (no hardcoded secrets)
+  FIREBASE_CONFIG: config.firebase,
   
-  // Token Configuration
-  TOKEN_EXPIRY_MINUTES: 20,
-  TOKEN_EXPIRY_SECONDS: 60 * 20, // 20 minutes
+  // Token Configuration from environment
+  TOKEN_EXPIRY_MINUTES: config.security.tokenExpiryMinutes,
+  TOKEN_EXPIRY_SECONDS: config.security.tokenExpirySeconds,
   
   // Request Configuration
-  RETURN_SECURE_TOKEN: true
+  RETURN_SECURE_TOKEN: config.security.returnSecureToken,
+
+  // Environment identifier
+  ENVIRONMENT: config.environment
 };

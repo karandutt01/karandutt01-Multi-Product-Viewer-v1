@@ -26,6 +26,8 @@ const { MESSAGES } = require('../../constants');
 
 const addProduct = async(req, res) => {
 
+  let uploadedFile = null;
+
   try {
 
     const {title, price, productDesc } = req.body
@@ -36,6 +38,7 @@ const addProduct = async(req, res) => {
 
     const fileName = `products/images/${req.file.originalname}`;
     const file = bucket.file(fileName);
+    uploadedFile = file;
 
     await file.save(req.file.buffer, {
       metadata: {
@@ -58,9 +61,17 @@ const addProduct = async(req, res) => {
 
     if(addProduct){
       return res.status(201).json({message: MESSAGES.SUCCESS.PRODUCT_ADDED})
+    }else{
+      return res.status(500).json({ 
+        error: MESSAGES.ERROR.PRODUCT_CREATION_FAILED
+      });
     }
 
   } catch (error) {
+   if (uploadedFile) {
+      await uploadedFile.delete();
+    }
+    
     return res.status(400).json({ error: error.message });
   }
 
