@@ -1,3 +1,9 @@
+backend/config/serviceAccountKey.json
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
 # Environment files - NEVER commit actual secrets
 .env
 .env.local
