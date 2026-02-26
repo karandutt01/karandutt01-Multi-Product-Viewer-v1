@@ -22,11 +22,11 @@ function loadEnvironmentConfig(environment = process.env.NODE_ENV || 'developmen
   
   if (fs.existsSync(envPath)) {
     require('dotenv').config({ path: envPath });
-    console.log(`✅ Loaded configuration for environment: ${environment}`);
+    console.log(`Loaded configuration for environment: ${environment}`);
   } else {
     // Fallback to default .env file
     require('dotenv').config();
-    console.warn(`⚠️ Environment file ${envFile} not found, using default .env`);
+    console.warn(`Environment file ${envFile} not found, using default .env`);
   }
 }
 
@@ -38,11 +38,11 @@ function validateEnvironmentVariables(requiredVars) {
   const missingVars = requiredVars.filter(varName => !process.env[varName]);
   
   if (missingVars.length > 0) {
-    console.error('❌ Missing required environment variables:', missingVars);
+    console.error('Missing required environment variables:', missingVars);
     throw new Error(`Configuration error: Missing required environment variables: ${missingVars.join(', ')}`);
   }
   
-  console.log('✅ All required environment variables are present');
+  console.log('All required environment variables are present');
 }
 
 /**
@@ -95,12 +95,26 @@ function initializeConfig() {
     
     // Validate required variables
     const requiredEnvVars = [
+
+      // Firebase configuration
       'FIREBASE_API_KEY',
       'FIREBASE_AUTH_DOMAIN',
       'FIREBASE_PROJECT_ID',
       'FIREBASE_STORAGE_BUCKET',
       'FIREBASE_MESSAGING_SENDER_ID',
-      'FIREBASE_APP_ID'
+      'FIREBASE_APP_ID',
+
+      // Service account configuration
+      'GOOGLE_SERVICE_ACCOUNT_TYPE',
+      'GOOGLE_SERVICE_ACCOUNT_PROJECT_ID',
+      'GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_ID',
+      'GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY',
+      'GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL',
+      'GOOGLE_SERVICE_ACCOUNT_CLIENT_ID',
+      'GOOGLE_SERVICE_ACCOUNT_AUTH_URI',
+      'GOOGLE_SERVICE_ACCOUNT_TOKEN_URI',
+      'GOOGLE_SERVICE_ACCOUNT_AUTH_PROVIDER_CERT_URL',
+      'GOOGLE_SERVICE_ACCOUNT_CLIENT_CERT_URL'
     ];
     
     validateEnvironmentVariables(requiredEnvVars);
