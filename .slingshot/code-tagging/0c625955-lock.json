@@ -1,0 +1,48 @@
+{
+  "backend/routes/productRoutes.js": {
+    "filename": "productRoutes.js",
+    "path": "backend/routes/productRoutes.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "adee9f": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1771934899,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "5d3c057b",
+        "messageId": "system_734ae840-1179-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": null,
+        "isActive": false
+      },
+      "1e21b9": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1771934924,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "d25d1099",
+        "messageId": "system_734ae840-1179-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_734ae840-1179-11f1-8c7f-2b7fea10d3af-Codeblock-2",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "8": {
+        "chunkId": "1e21b9",
+        "hash": "d8ea067c",
+        "encoded": "const%20%7B%20addProduct,%20productList%20%7D%20=%20require('../controllers/products/ProductController')",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

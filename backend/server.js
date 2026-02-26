@@ -21,5 +21,5 @@ app.use('/api', userRoutes)
 app.use('/api/products', products)
 
 app.listen(port, () => {
-   console.log(`🌍 Starting application in ${config.environment} environment on port ${port}`);
+   console.log(`Starting application in ${config.environment} environment on port ${port}`);
 })

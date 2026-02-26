@@ -1,0 +1,26 @@
+{
+  "backend/constants/httpStatus.js": {
+    "filename": "httpStatus.js",
+    "path": "backend/constants/httpStatus.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "e66865": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1771923661,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "1bb0c829",
+        "messageId": "system_effdc620-115e-11f1-84e7-59be663eed42",
+        "codeBlockId": "system_effdc620-115e-11f1-84e7-59be663eed42-Codeblock-2",
+        "isActive": false
+      }
+    },
+    "lines": {}
+  }
+}

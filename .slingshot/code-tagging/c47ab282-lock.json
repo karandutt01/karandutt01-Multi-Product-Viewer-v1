@@ -1,0 +1,93 @@
+{
+  "backend/.env.development": {
+    "filename": ".env.development",
+    "path": "backend/.env.development",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "73a001": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772083761,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "b5059ff3",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-3",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "13": {
+        "chunkId": "73a001",
+        "hash": "fd17d748",
+        "encoded": "#%20Development%20Environment",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "73a001",
+        "hash": "ad3f05de",
+        "encoded": "FIREBASE_API_KEY=AIzaSyASSGSw-qf99uUdoMTtjqTxmYfQnKtJYfk",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "73a001",
+        "hash": "94e4b4e4",
+        "encoded": "FIREBASE_AUTH_DOMAIN=multi-product-viewer-dev.firebaseapp.com",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "73a001",
+        "hash": "76802e01",
+        "encoded": "FIREBASE_PROJECT_ID=multi-product-viewer-dev",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "73a001",
+        "hash": "6e608412",
+        "encoded": "FIREBASE_STORAGE_BUCKET=multi-product-viewer-dev.firebasestorage.app",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "73a001",
+        "hash": "6b3af00b",
+        "encoded": "FIREBASE_MESSAGING_SENDER_ID=725574217788",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "73a001",
+        "hash": "2fbfd0b8",
+        "encoded": "FIREBASE_APP_ID=1:725574217788:web:c6fd8e533c50bc6370d339",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "73a001",
+        "hash": "b062e4e2",
+        "encoded": "TOKEN_EXPIRY_MINUTES=60",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "73a001",
+        "hash": "d2c3ea98",
+        "encoded": "TOKEN_EXPIRY_SECONDS=3600",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "73a001",
+        "hash": "12b55cd4",
+        "encoded": "RETURN_SECURE_TOKEN=true",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "73a001",
+        "hash": "2b995d15",
+        "encoded": "NODE_ENV=development",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

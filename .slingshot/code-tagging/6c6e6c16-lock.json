@@ -1,0 +1,33 @@
+{
+  "backend/controllers/Products/ProductController.js": {
+    "filename": "ProductController.js",
+    "path": "backend/controllers/Products/ProductController.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "b08829": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772024923,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "75c0b89b",
+        "messageId": "system_e2a3c6e0-124a-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_e2a3c6e0-124a-11f1-8c7f-2b7fea10d3af-Codeblock-1",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "28": {
+        "chunkId": "b08829",
+        "hash": "d915f9c0",
+        "encoded": "let%20uploadedFile%20=%20null;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

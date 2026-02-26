@@ -1,0 +1,192 @@
+{
+  "backend/constants/firebase.js": {
+    "filename": "firebase.js",
+    "path": "backend/constants/firebase.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "b05516": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1771923539,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "8627cc78",
+        "messageId": "system_effdc620-115e-11f1-84e7-59be663eed42",
+        "codeBlockId": "system_effdc620-115e-11f1-84e7-59be663eed42-Codeblock-1",
+        "isActive": true
+      },
+      "e9fa29": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772083938,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "1fab5a31",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-7",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "b05516",
+        "hash": "48c76aad",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "b05516",
+        "hash": "e051ac4d",
+        "encoded": "*%20@module%20constants/firebase",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "b05516",
+        "hash": "b5586198",
+        "encoded": "*%20Firebase-specific%20constants%20and%20API%20endpoints",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "e9fa29",
+        "hash": "e6731c11",
+        "encoded": "*%20Now%20uses%20environment%20variables%20for%20secure%20configuration",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "b05516",
+        "hash": "2755171d",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "e9fa29",
+        "hash": "fd7ec580",
+        "encoded": "//%20Import%20configuration%20system",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "e9fa29",
+        "hash": "a17c9e31",
+        "encoded": "const%20%7B%20getConfig%20%7D%20=%20require('../config/config');",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "e9fa29",
+        "hash": "65becaff",
+        "encoded": "//%20Get%20validated%20configuration",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "e9fa29",
+        "hash": "80379f0c",
+        "encoded": "const%20config%20=%20getConfig();",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "b05516",
+        "hash": "d693f604",
+        "encoded": "module.exports%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "b05516",
+        "hash": "fd1aaa50",
+        "encoded": "//%20Firebase%20Auth%20API%20Endpoints",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "b05516",
+        "hash": "e2facf8c",
+        "encoded": "API_ENDPOINTS:%20%7B",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "b05516",
+        "hash": "a8c3af4c",
+        "encoded": "SIGN_IN_WITH_PASSWORD:%20'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword',",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "b05516",
+        "hash": "86a3ae95",
+        "encoded": "REFRESH_TOKEN:%20'https://securetoken.googleapis.com/v1/token',",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "b05516",
+        "hash": "220c9b6d",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "e9fa29",
+        "hash": "beb2fd7a",
+        "encoded": "//%20Environment-based%20Firebase%20Configuration%20(no%20hardcoded%20secrets)",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "e9fa29",
+        "hash": "8d4bbca7",
+        "encoded": "FIREBASE_CONFIG:%20config.firebase,",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "e9fa29",
+        "hash": "d42ccf3c",
+        "encoded": "//%20Token%20Configuration%20from%20environment",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "e9fa29",
+        "hash": "0d0a9966",
+        "encoded": "TOKEN_EXPIRY_MINUTES:%20config.security.tokenExpiryMinutes,",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "e9fa29",
+        "hash": "9668d106",
+        "encoded": "TOKEN_EXPIRY_SECONDS:%20config.security.tokenExpirySeconds,",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "b05516",
+        "hash": "c8bbc23e",
+        "encoded": "//%20Request%20Configuration",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "e9fa29",
+        "hash": "69376ab1",
+        "encoded": "RETURN_SECURE_TOKEN:%20config.security.returnSecureToken,",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "e9fa29",
+        "hash": "267b775a",
+        "encoded": "//%20Environment%20identifier",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "e9fa29",
+        "hash": "e91ac3d4",
+        "encoded": "ENVIRONMENT:%20config.environment",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "e9fa29",
+        "hash": "8080b9e9",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

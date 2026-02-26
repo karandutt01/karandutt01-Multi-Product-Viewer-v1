@@ -1,0 +1,78 @@
+{
+  "backend/server.js": {
+    "filename": "server.js",
+    "path": "backend/server.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "c9ee01": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772083977,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "6562fa4c",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-8",
+        "isActive": false
+      },
+      "90a4e9": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772083983,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "87c91dea",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-8",
+        "isActive": false
+      },
+      "a7b032": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772084013,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "00b851b0",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-8",
+        "isActive": true
+      },
+      "fc5b03": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772084032,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "34fd2fc3",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-8",
+        "isActive": false
+      }
+    },
+    "lines": {
+      "5": {
+        "chunkId": "a7b032",
+        "hash": "79eaff4b",
+        "encoded": "const%20firebaseConfig%20=%20require('./constants/firebase');",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

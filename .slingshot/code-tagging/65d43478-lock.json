@@ -1,0 +1,684 @@
+{
+  "backend/config/config.js": {
+    "filename": "config.js",
+    "path": "backend/config/config.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "6b1275": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772083816,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "22352add",
+        "messageId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_a85f8df0-12d3-11f1-8c7f-2b7fea10d3af-Codeblock-6",
+        "isActive": true
+      },
+      "99e86b": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772085073,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "acaef960",
+        "messageId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af-Codeblock-6",
+        "isActive": true
+      },
+      "71fc09": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772085135,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "f1ab0e0f",
+        "messageId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af-Codeblock-6",
+        "isActive": true
+      },
+      "17228f": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772085140,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "85d4f85d",
+        "messageId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af",
+        "codeBlockId": "system_80915c20-12d5-11f1-8c7f-2b7fea10d3af-Codeblock-6",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "6b1275",
+        "hash": "48c76aad",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "6b1275",
+        "hash": "f0137ccb",
+        "encoded": "*%20@module%20config/config",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "6b1275",
+        "hash": "71dc9bb9",
+        "encoded": "*%20Centralized%20configuration%20management%20with%20environment-specific%20loading",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "6b1275",
+        "hash": "b47f7c0a",
+        "encoded": "*",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "6b1275",
+        "hash": "64973860",
+        "encoded": "*%20PURPOSE:",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "6b1275",
+        "hash": "e7470879",
+        "encoded": "*%201.%20Environment%20Detection%20&%20Loading",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "6b1275",
+        "hash": "db2a0679",
+        "encoded": "*%202.%20Configuration%20Validation",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "6b1275",
+        "hash": "369c9c92",
+        "encoded": "*%203.%20Centralized%20Configuration%20Access",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "6b1275",
+        "hash": "28c54add",
+        "encoded": "*%204.%20Error%20Handling%20&%20Fallbacks",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "6b1275",
+        "hash": "7c8b9e0c",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "6b1275",
+        "hash": "afa726d3",
+        "encoded": "const%20path%20=%20require('path');",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "6b1275",
+        "hash": "c426a7e4",
+        "encoded": "const%20fs%20=%20require('fs');",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "6b1275",
+        "hash": "f847a38b",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "6b1275",
+        "hash": "762c0e54",
+        "encoded": "*%20Load%20environment-specific%20configuration%20files",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "6b1275",
+        "hash": "cf9c29d0",
+        "encoded": "*%20Automatically%20detects%20and%20loads%20the%20correct%20.env%20file%20based%20on%20NODE_ENV",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "6b1275",
+        "hash": "fc142b2b",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "6b1275",
+        "hash": "f9cfe73f",
+        "encoded": "function%20loadEnvironmentConfig(environment%20=%20process.env.NODE_ENV%20%7C%7C%20'development')%20%7B",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "6b1275",
+        "hash": "cdceceba",
+        "encoded": "const%20envFile%20=%20%60.env.$%7Benvironment%7D%60;",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "6b1275",
+        "hash": "2ded3e9b",
+        "encoded": "const%20envPath%20=%20path.join(__dirname,%20'..',%20envFile);",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "6b1275",
+        "hash": "f2692055",
+        "encoded": "if%20(fs.existsSync(envPath))%20%7B",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "6b1275",
+        "hash": "f5b2913c",
+        "encoded": "require('dotenv').config(%7B%20path:%20envPath%20%7D);",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "6b1275",
+        "hash": "b90f0f88",
+        "encoded": "%7D%20else%20%7B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "6b1275",
+        "hash": "caf64e3e",
+        "encoded": "//%20Fallback%20to%20default%20.env%20file",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "6b1275",
+        "hash": "8da1ef92",
+        "encoded": "require('dotenv').config();",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "6b1275",
+        "hash": "7721e417",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "6b1275",
+        "hash": "cfdac52c",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "6b1275",
+        "hash": "de2fae64",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "6b1275",
+        "hash": "73db2cc0",
+        "encoded": "*%20Validate%20that%20all%20required%20environment%20variables%20are%20present",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "6b1275",
+        "hash": "c14be3fe",
+        "encoded": "*%20Prevents%20application%20startup%20with%20missing%20critical%20configuration",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "6b1275",
+        "hash": "75d5d983",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "6b1275",
+        "hash": "95157d16",
+        "encoded": "function%20validateEnvironmentVariables(requiredVars)%20%7B",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "6b1275",
+        "hash": "145ae0b0",
+        "encoded": "const%20missingVars%20=%20requiredVars.filter(varName%20=%3E%20!process.env%5BvarName%5D);",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "6b1275",
+        "hash": "882e2178",
+        "encoded": "if%20(missingVars.length%20%3E%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "6b1275",
+        "hash": "9688b862",
+        "encoded": "throw%20new%20Error(%60Configuration%20error:%20Missing%20required%20environment%20variables:%20$%7BmissingVars.join(',%20')%7D%60);",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "6b1275",
+        "hash": "5663967b",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "6b1275",
+        "hash": "8b687a61",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "6b1275",
+        "hash": "3fb31cab",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "6b1275",
+        "hash": "e63db00a",
+        "encoded": "*%20Get%20typed%20and%20validated%20configuration%20object",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "6b1275",
+        "hash": "a1d6a7d6",
+        "encoded": "*%20Provides%20a%20single%20source%20of%20truth%20for%20all%20application%20configuration",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "6b1275",
+        "hash": "2afef828",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "6b1275",
+        "hash": "683b718b",
+        "encoded": "function%20getConfig()%20%7B",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "6b1275",
+        "hash": "7a246fd4",
+        "encoded": "const%20environment%20=%20process.env.NODE_ENV%20%7C%7C%20'development';",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "6b1275",
+        "hash": "c934bab0",
+        "encoded": "return%20%7B",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "6b1275",
+        "hash": "400c4426",
+        "encoded": "//%20Environment%20information",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "6b1275",
+        "hash": "90ef903f",
+        "encoded": "environment,",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "6b1275",
+        "hash": "23c6b3f6",
+        "encoded": "isDevelopment:%20environment%20===%20'development',",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "6b1275",
+        "hash": "02c8f3b7",
+        "encoded": "isStaging:%20environment%20===%20'staging',",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "6b1275",
+        "hash": "daf3ba24",
+        "encoded": "isProduction:%20environment%20===%20'production',",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "6b1275",
+        "hash": "cb8fabd4",
+        "encoded": "//%20Security%20settings%20with%20type%20conversion%20and%20defaults",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "6b1275",
+        "hash": "228e3e92",
+        "encoded": "security:%20%7B",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "6b1275",
+        "hash": "ffc3cf17",
+        "encoded": "tokenExpiryMinutes:%20parseInt(process.env.TOKEN_EXPIRY_MINUTES)%20%7C%7C%2020,",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "6b1275",
+        "hash": "400f9595",
+        "encoded": "tokenExpirySeconds:%20parseInt(process.env.TOKEN_EXPIRY_SECONDS)%20%7C%7C%201200,",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "6b1275",
+        "hash": "a6b8fc8a",
+        "encoded": "returnSecureToken:%20process.env.RETURN_SECURE_TOKEN%20===%20'true'",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "6b1275",
+        "hash": "7b88621a",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "6b1275",
+        "hash": "ff12b0fc",
+        "encoded": "//%20Firebase%20configuration",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "6b1275",
+        "hash": "c31a2e33",
+        "encoded": "firebase:%20%7B",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "6b1275",
+        "hash": "4da36223",
+        "encoded": "apiKey:%20process.env.FIREBASE_API_KEY,",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "6b1275",
+        "hash": "1cc850c9",
+        "encoded": "authDomain:%20process.env.FIREBASE_AUTH_DOMAIN,",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "6b1275",
+        "hash": "b5c7764a",
+        "encoded": "projectId:%20process.env.FIREBASE_PROJECT_ID,",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "6b1275",
+        "hash": "b2cbeb2a",
+        "encoded": "storageBucket:%20process.env.FIREBASE_STORAGE_BUCKET,",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "6b1275",
+        "hash": "0e50fc5c",
+        "encoded": "messagingSenderId:%20process.env.FIREBASE_MESSAGING_SENDER_ID,",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "6b1275",
+        "hash": "0ea6ed49",
+        "encoded": "appId:%20process.env.FIREBASE_APP_ID",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "6b1275",
+        "hash": "11fc4278",
+        "encoded": "%7D,",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "6b1275",
+        "hash": "93ed2b7b",
+        "encoded": "//%20Server%20configuration",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "6b1275",
+        "hash": "4240d300",
+        "encoded": "server:%20%7B",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "6b1275",
+        "hash": "8dcfa6c2",
+        "encoded": "port:%20parseInt(process.env.PORT)%20%7C%7C%203000,",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "6b1275",
+        "hash": "546489c8",
+        "encoded": "host:%20process.env.HOST%20%7C%7C%20'localhost'",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "6b1275",
+        "hash": "74977a35",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "6b1275",
+        "hash": "74fcb7ab",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "6b1275",
+        "hash": "d7cd7257",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "6b1275",
+        "hash": "0c8c5ee6",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "6b1275",
+        "hash": "925cedae",
+        "encoded": "*%20Initialize%20configuration%20system",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "6b1275",
+        "hash": "05f94bd9",
+        "encoded": "*%20Call%20this%20at%20application%20startup%20before%20importing%20other%20modules",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "6b1275",
+        "hash": "0bf47674",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "6b1275",
+        "hash": "57b6f780",
+        "encoded": "function%20initializeConfig()%20%7B",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "6b1275",
+        "hash": "b0474f3a",
+        "encoded": "try%20%7B",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "6b1275",
+        "hash": "52d9c3bd",
+        "encoded": "//%20Load%20environment-specific%20configuration",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "6b1275",
+        "hash": "986b0c77",
+        "encoded": "loadEnvironmentConfig();",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "6b1275",
+        "hash": "7945c00e",
+        "encoded": "//%20Validate%20required%20variables",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "6b1275",
+        "hash": "eb5c9924",
+        "encoded": "const%20requiredEnvVars%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "17228f",
+        "hash": "2707707b",
+        "encoded": "//%20Firebase%20configuration",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "6b1275",
+        "hash": "29fe7490",
+        "encoded": "'FIREBASE_API_KEY',",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "6b1275",
+        "hash": "d64b81a5",
+        "encoded": "'FIREBASE_AUTH_DOMAIN',",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "6b1275",
+        "hash": "42611037",
+        "encoded": "'FIREBASE_PROJECT_ID',",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "6b1275",
+        "hash": "4cab97a8",
+        "encoded": "'FIREBASE_STORAGE_BUCKET',",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "6b1275",
+        "hash": "eac306b1",
+        "encoded": "'FIREBASE_MESSAGING_SENDER_ID',",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "71fc09",
+        "hash": "bfe7083a",
+        "encoded": "//%20Service%20account%20configuration",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "6b1275",
+        "hash": "423664ea",
+        "encoded": "%5D;",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "6b1275",
+        "hash": "57c62e7b",
+        "encoded": "validateEnvironmentVariables(requiredEnvVars);",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "6b1275",
+        "hash": "a27500dd",
+        "encoded": "console.log('%F0%9F%9A%80%20Configuration%20system%20initialized%20successfully');",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "6b1275",
+        "hash": "d6efcc63",
+        "encoded": "return%20getConfig();",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "6b1275",
+        "hash": "9747284b",
+        "encoded": "%7D%20catch%20(error)%20%7B",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "6b1275",
+        "hash": "c838abfe",
+        "encoded": "console.error('%F0%9F%92%A5%20Configuration%20initialization%20failed:',%20error.message);",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "6b1275",
+        "hash": "70cdfa6a",
+        "encoded": "process.exit(1);",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "6b1275",
+        "hash": "5513b7ee",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "6b1275",
+        "hash": "b945986d",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "6b1275",
+        "hash": "215cf837",
+        "encoded": "module.exports%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "6b1275",
+        "hash": "b9e8b292",
+        "encoded": "loadEnvironmentConfig,",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "6b1275",
+        "hash": "e97e5088",
+        "encoded": "validateEnvironmentVariables,",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "6b1275",
+        "hash": "eba23220",
+        "encoded": "getConfig,",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "6b1275",
+        "hash": "c97d4136",
+        "encoded": "initializeConfig",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "99e86b",
+        "hash": "f1de59d9",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}
