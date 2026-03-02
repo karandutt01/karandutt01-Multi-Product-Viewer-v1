@@ -30,6 +30,35 @@ function loadEnvironmentConfig(environment = process.env.NODE_ENV || 'developmen
   }
 }
 
+
+/**
+ * Validate service account private key format
+ */
+function validatePrivateKey(privateKey) {
+  if (!privateKey) {
+    throw new Error('Private key is required');
+  }
+  
+  // Handle escaped newlines
+  const processedKey = privateKey.replace(/\\n/g, '\n');
+  
+  // Check for required markers
+  if (!processedKey.includes('-----BEGIN PRIVATE KEY-----')) {
+    throw new Error('Private key must start with -----BEGIN PRIVATE KEY-----');
+  }
+  
+  if (!processedKey.includes('-----END PRIVATE KEY-----')) {
+    throw new Error('Private key must end with -----END PRIVATE KEY-----');
+  }
+  
+  // Basic length check (RSA 2048-bit keys are typically ~1600+ chars)
+  if (processedKey.length < 1000) {
+    throw new Error('Private key appears to be too short or malformed');
+  }
+  
+  return true;
+}
+
 /**
  * Validate that all required environment variables are present
  * Prevents application startup with missing critical configuration
@@ -42,6 +71,15 @@ function validateEnvironmentVariables(requiredVars) {
     throw new Error(`Configuration error: Missing required environment variables: ${missingVars.join(', ')}`);
   }
   
+  // Validate private key format
+  try {
+    validatePrivateKey(process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY);
+    console.log('✅ Private key format validation passed');
+  } catch (error) {
+    console.error('❌ Private key validation failed:', error.message);
+    throw new Error(`Private key validation error: ${error.message}`);
+  }
+
   console.log('All required environment variables are present');
 }
 
@@ -130,6 +168,7 @@ function initializeConfig() {
 module.exports = {
   loadEnvironmentConfig,
   validateEnvironmentVariables,
+  validatePrivateKey,
   getConfig,
   initializeConfig
 };
