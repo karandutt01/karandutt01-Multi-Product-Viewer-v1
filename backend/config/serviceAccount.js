@@ -28,6 +28,19 @@ function getServiceAccountConfig() {
     throw new Error(`Missing required service account environment variables: ${missingVars.join(', ')}`);
   }
 
+  // Process private key with proper newline handling
+  let privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+  
+  // Handle different newline formats
+  if (privateKey.includes('\\n')) {
+    privateKey = privateKey.replace(/\\n/g, '\n');
+  }
+  
+  // Validate private key format
+  if (!privateKey.includes('-----BEGIN PRIVATE KEY-----') || !privateKey.includes('-----END PRIVATE KEY-----')) {
+    throw new Error('Invalid private key format. Must include BEGIN and END markers.');
+  }
+
   // Construct service account object from environment variables
   return {
     type: process.env.GOOGLE_SERVICE_ACCOUNT_TYPE,
