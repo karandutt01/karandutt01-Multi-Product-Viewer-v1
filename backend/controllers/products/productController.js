@@ -101,7 +101,48 @@ const productList = async(req, res) => {
   }
 }
 
+const productDetails = async(req, res) => {
+  try {
+
+    const productId = req.params.id;
+    if (!productId) {
+      return res.status(400).json({ 
+        error: 'Product ID is required' 
+      });
+    }
+
+    const snapshot = await db.collection('products')
+                            .doc(productId).get();
+
+
+    if (!snapshot.exists) {
+      return res.status(404).json({ 
+        doc: [],
+        message: MESSAGES.SUCCESS.NO_PRODUCTS_FOUND || 'Product not found'
+      });
+    }
+
+    const productData = snapshot.data();
+    if (productData.user_id !== req.user.user_id) {
+      return res.status(403).json({ 
+        error: 'Access denied. Product does not belong to user.' 
+      });
+    }
+    
+    const product = {
+      id: snapshot.id,
+      ...productData
+    };
+   
+    return res.status(200).json(product)
+
+  } catch (error) {
+    return res.json({error: error.message})
+  }
+}
+
 module.exports = {
   addProduct,
-  productList
+  productList,
+  productDetails
 }

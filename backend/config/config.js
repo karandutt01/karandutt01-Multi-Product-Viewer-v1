@@ -89,7 +89,7 @@ function validateEnvironmentVariables(requiredVars) {
  */
 function getConfig() {
   const environment = process.env.NODE_ENV || 'development';
-  
+
   return {
     // Environment information
     environment,
