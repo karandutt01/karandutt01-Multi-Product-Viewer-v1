@@ -72,11 +72,15 @@ const loginUser = async(req, res) => {
         const { email, password } = req.body;
          const response = await fetch(`${FIREBASE.API_ENDPOINTS.SIGN_IN_WITH_PASSWORD}?key=${firebaseConfig.apiKey}`, {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify({ 
                 email,
                 password,
                 returnSecureToken: FIREBASE.RETURN_SECURE_TOKEN
             }),
+            signal: AbortSignal.timeout(10_000),
         });
 
         const data = await response.json();
@@ -87,16 +91,22 @@ const loginUser = async(req, res) => {
                 token: data.idToken,
                 uid: data.localId,
                 refreshToken: data.refreshToken,
-                expiresIn: FIREBASE.TOKEN_EXPIRY_SECONDS
+                expiresIn: Number(data.expiresIn)
             });
         }else{
             throw new Error(data.error?.message || MESSAGES.ERROR.LOGIN_FAILED);
         }    
 
     } catch (error) {
-        return res.status(HTTP_STATUS.UNAUTHORIZED).json({error: error.message || MESSAGES.ERROR.INVALID_CREDENTIALS});
+        const isCredentialError = error?.message === MESSAGES.ERROR.INVALID_CREDENTIALS;
+        return res
+          .status(isCredentialError ? HTTP_STATUS.UNAUTHORIZED : HTTP_STATUS.INTERNAL_SERVER_ERROR)
+          .json({
+            error: isCredentialError
+              ? MESSAGES.ERROR.INVALID_CREDENTIALS
+              : MESSAGES.ERROR.LOGIN_FAILED
+          });
     }
-   
 }
 
 
