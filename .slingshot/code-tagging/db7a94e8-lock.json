@@ -1,0 +1,261 @@
+{
+  "backend/.env.example": {
+    "filename": ".env.example",
+    "path": "backend/.env.example",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "2e5165": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772796607,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "5e3b484d",
+        "messageId": "system_ab973400-194f-11f1-a9a0-6f3ba034df13",
+        "codeBlockId": "system_ab973400-194f-11f1-a9a0-6f3ba034df13-Codeblock-1",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "27": {
+        "chunkId": "2e5165",
+        "hash": "13d2bbff",
+        "encoded": "#%20Google%20Service%20Account%20Configuration",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "2e5165",
+        "hash": "dd940c9b",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_TYPE=service_account",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "2e5165",
+        "hash": "d8965811",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_PROJECT_ID=%3CYOUR_PROJECT_ID%3E",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "2e5165",
+        "hash": "adcbcf4e",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_ID=%3CPRIVATE_KEY_ID_PLACEHOLDER%3E",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "2e5165",
+        "hash": "9e07f3ad",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY=%22%3CPRIVATE_KEY_PLACEHOLDER%3E%22",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "2e5165",
+        "hash": "c02a730a",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL=%3CSERVICE_ACCOUNT_EMAIL%3E",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "2e5165",
+        "hash": "ae0d1973",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_CLIENT_ID=%3CCLIENT_ID_PLACEHOLDER%3E",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "2e5165",
+        "hash": "3246a284",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_AUTH_URI=https://accounts.google.com/o/oauth2/auth",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "2e5165",
+        "hash": "d09b51fc",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_TOKEN_URI=https://oauth2.googleapis.com/token",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "2e5165",
+        "hash": "797aa02a",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_AUTH_PROVIDER_CERT_URL=https://www.googleapis.com/oauth2/v1/certs",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "2e5165",
+        "hash": "e6684a2b",
+        "encoded": "GOOGLE_SERVICE_ACCOUNT_CLIENT_CERT_URL=%3CCLIENT_CERT_URL_PLACEHOLDER%3E",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "2e5165",
+        "hash": "38c329be",
+        "encoded": "GOOGLE_UNIVERSE_DOMAIN=googleapis.com",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "2e5165",
+        "hash": "519d1c61",
+        "encoded": "#%20Firebase%20Configuration%20Template",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "2e5165",
+        "hash": "1bc481ea",
+        "encoded": "FIREBASE_API_KEY=%3CFIREBASE_API_KEY%3E",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "2e5165",
+        "hash": "5a12d124",
+        "encoded": "FIREBASE_AUTH_DOMAIN=%3CYOUR_PROJECT_ID%3E.firebaseapp.com",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "2e5165",
+        "hash": "02fbd16d",
+        "encoded": "FIREBASE_PROJECT_ID=%3CYOUR_PROJECT_ID%3E",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "2e5165",
+        "hash": "d1a1eab9",
+        "encoded": "FIREBASE_STORAGE_BUCKET=%3CYOUR_PROJECT_ID%3E.firebasestorage.app",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "2e5165",
+        "hash": "270e1757",
+        "encoded": "FIREBASE_MESSAGING_SENDER_ID=%3CMESSAGING_SENDER_ID%3E",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "2e5165",
+        "hash": "7b7cdf4a",
+        "encoded": "FIREBASE_APP_ID=%3CFIREBASE_APP_ID%3E",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "2e5165",
+        "hash": "a4d18c3e",
+        "encoded": "#%20Add%20missing%20environment%20variable",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "2e5165",
+        "hash": "7bf2afe4",
+        "encoded": "FIRESTORE_DB_URL=%3CFIRESTORE_DATABASE_URL%3E",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "2e5165",
+        "hash": "c46dd7bc",
+        "encoded": "#%20Token%20Configuration",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "2e5165",
+        "hash": "52ae876e",
+        "encoded": "TOKEN_EXPIRY_MINUTES=20",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "2e5165",
+        "hash": "2fdd65db",
+        "encoded": "TOKEN_EXPIRY_SECONDS=1200",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "2e5165",
+        "hash": "735ff1e1",
+        "encoded": "RETURN_SECURE_TOKEN=true",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "2e5165",
+        "hash": "2f6b935b",
+        "encoded": "#%20Environment",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "2e5165",
+        "hash": "ba0296ce",
+        "encoded": "NODE_ENV=development",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "2e5165",
+        "hash": "25490983",
+        "encoded": "#%20SECURITY%20NOTICE:",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "2e5165",
+        "hash": "ae662dce",
+        "encoded": "#%20This%20is%20an%20EXAMPLE%20file%20with%20placeholder%20values%20only.",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "2e5165",
+        "hash": "07d00096",
+        "encoded": "#%20DO%20NOT%20commit%20real%20credentials%20to%20version%20control.",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "2e5165",
+        "hash": "0b03df72",
+        "encoded": "#",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "2e5165",
+        "hash": "15d02c59",
+        "encoded": "#%20To%20set%20up%20your%20environment:",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "2e5165",
+        "hash": "12fa5bd2",
+        "encoded": "#%201.%20Copy%20this%20file%20to%20.env",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "2e5165",
+        "hash": "6038f3aa",
+        "encoded": "#%202.%20Replace%20all%20placeholder%20values%20with%20your%20actual%20credentials",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "2e5165",
+        "hash": "fab4efef",
+        "encoded": "#%203.%20Obtain%20credentials%20from:",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "2e5165",
+        "hash": "e6c5928b",
+        "encoded": "#%20%20%20%20-%20Google%20Cloud%20Console%20%3E%20IAM%20&%20Admin%20%3E%20Service%20Accounts",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "2e5165",
+        "hash": "9b2c584c",
+        "encoded": "#%20%20%20%20-%20Firebase%20Console%20%3E%20Project%20Settings%20%3E%20General",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "2e5165",
+        "hash": "da6384c7",
+        "encoded": "#%204.%20Store%20production%20secrets%20in%20a%20secure%20secrets%20manager",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "2e5165",
+        "hash": "e1d50925",
+        "encoded": "#%20%20%20%20(e.g.,%20Google%20Secret%20Manager,%20AWS%20Secrets%20Manager,%20Azure%20Key%20Vault)",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "backend/config/serviceAccount.js": {
+    "filename": "serviceAccount.js",
+    "path": "backend/config/serviceAccount.js",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "007de0": {
+        "user": "Karan Dutt",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1772794842,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.2.0",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {},
+        "hash": "611fce7c",
+        "messageId": "system_9bc42280-194b-11f1-a9a0-6f3ba034df13",
+        "codeBlockId": "system_9bc42280-194b-11f1-a9a0-6f3ba034df13-Codeblock-1",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "9": {
+        "chunkId": "007de0",
+        "hash": "9b2e8d10",
+        "encoded": "function%20getServiceAccountConfig()%20%7B",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "007de0",
+        "hash": "46b23985",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "007de0",
+        "hash": "a349a378",
+        "encoded": "return%20%7B",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "007de0",
+        "hash": "13ce310c",
+        "encoded": "type:%20process.env.GOOGLE_SERVICE_ACCOUNT_TYPE,",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "007de0",
+        "hash": "ae791e14",
+        "encoded": "project_id:%20process.env.GOOGLE_SERVICE_ACCOUNT_PROJECT_ID,",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "007de0",
+        "hash": "c0024d90",
+        "encoded": "private_key_id:%20process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_ID,",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "007de0",
+        "hash": "10a181fa",
+        "encoded": "client_email:%20process.env.GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL,",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "007de0",
+        "hash": "ac5a6b99",
+        "encoded": "client_id:%20process.env.GOOGLE_SERVICE_ACCOUNT_CLIENT_ID,",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "007de0",
+        "hash": "8258e38e",
+        "encoded": "auth_uri:%20process.env.GOOGLE_SERVICE_ACCOUNT_AUTH_URI,",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "007de0",
+        "hash": "8d8394cb",
+        "encoded": "token_uri:%20process.env.GOOGLE_SERVICE_ACCOUNT_TOKEN_URI,",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "007de0",
+        "hash": "608dcfad",
+        "encoded": "auth_provider_x509_cert_url:%20process.env.GOOGLE_SERVICE_ACCOUNT_AUTH_PROVIDER_CERT_URL,",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "007de0",
+        "hash": "8aa563ff",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "007de0",
+        "hash": "d21c951b",
+        "encoded": "module.exports%20=%20%7B",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "007de0",
+        "hash": "e4503afd",
+        "encoded": "getServiceAccountConfig,",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "007de0",
+        "hash": "0fb1d46d",
+        "encoded": "%7D;",
+        "prevChunkIds": []
+      }
+    }
+  }
+}
