@@ -1,4 +1,5 @@
 const admin = require("firebase-admin");
+const { FIREBASE_CONFIG } = require("../constants/firebase");
 
 function createServiceAccountConfig() {
   return {
@@ -19,7 +20,7 @@ function createServiceAccountConfig() {
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(createServiceAccountConfig()),
-    storageBucket: "multi-product-viewer.firebasestorage.app",
+    storageBucket: FIREBASE_CONFIG.storageBucket,
   });
 }
 

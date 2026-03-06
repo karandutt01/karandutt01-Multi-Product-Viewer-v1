@@ -97,7 +97,7 @@ const productList = async(req, res) => {
     }
 
   } catch (error) {
-    return res.json({error: error.message})
+    return res.status(500).json({error: error.message})
   }
 }
 
@@ -137,7 +137,7 @@ const productDetails = async(req, res) => {
     return res.status(200).json(product)
 
   } catch (error) {
-    return res.json({error: error.message})
+    return res.status(500).json({error: error.message})
   }
 }
 

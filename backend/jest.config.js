@@ -7,7 +7,6 @@ module.exports = {
   collectCoverage: true,
   moduleFileExtensions: ['js', 'json'],
   testMatch: ['**/?(*.)+(test).js'],
-  collectCoverage: true,
   collectCoverageFrom: [
     '**/*.js',
     '!**/*.test.js',

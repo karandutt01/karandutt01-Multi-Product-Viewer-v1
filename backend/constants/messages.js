@@ -19,7 +19,6 @@ module.exports = {
     LOGIN_FAILED: 'Login failed',
     TOKEN_EXPIRED: 'Authentication token has expired',
     TOKEN_INVALID: 'Invalid authentication token',
-    LOGIN_FAILED: 'Login failed',
 
     // User Management
     USER_ALREADY_EXISTS: 'User with this email already exists',
