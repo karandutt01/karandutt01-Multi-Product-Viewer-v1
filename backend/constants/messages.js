@@ -76,7 +76,8 @@ module.exports = {
     FILE_SIZE_LIMIT: 'File size must be less than 5MB',
     
     // General Validation
-    VALIDATION_FAILED: 'Validation failed'
+    VALIDATION_FAILED: 'Validation failed',
+    FILE_UPLOAD_FAILED:'File upload failed. Ensure the file field name is "image" and the file is properly selected.'
 
   }
 };
