@@ -17,6 +17,10 @@ function createServiceAccountConfig() {
   };
 }
 
+if (!process.env.FIREBASE_STORAGE_BUCKET) {
+  throw new Error("FIREBASE_STORAGE_BUCKET environment variable is required");
+}
+
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(createServiceAccountConfig()),
@@ -26,6 +30,7 @@ if (!admin.apps.length) {
 
 const db = admin.firestore();
 const bucket = admin.storage().bucket();
+console.log(bucket)
 
 module.exports = {
   admin,
