@@ -30,7 +30,6 @@ if (!admin.apps.length) {
 
 const db = admin.firestore();
 const bucket = admin.storage().bucket();
-console.log(bucket)
 
 module.exports = {
   admin,
