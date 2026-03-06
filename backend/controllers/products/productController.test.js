@@ -1,4 +1,4 @@
-const { addProduct, productList } = require('../products/productController');
+const { addProduct, productList } = require('./productController');
 const httpMocks = require('node-mocks-http');
 const { db } = require('../../config/firebaseAdmin');
 

@@ -6,7 +6,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { addProduct, productList, productDetails } = require('../products/ProductController')
+const { addProduct, productList, productDetails } = require('../controllers/products/productController')
 const authMiddleware = require('../middleware/validateTokenHandler')
 const { validateAddProduct } = require('../validators/product/productValidator')
 const uploadFile = require('../middleware/uploadFile')
